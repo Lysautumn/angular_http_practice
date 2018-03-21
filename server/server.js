@@ -9,7 +9,7 @@ const foodRouter = require('./routes/food.router');
 
 // Mongo code
 const mongoose = require('mongoose');
-const databaseURL = 'mongodb://localhost:27017/food';
+const databaseURL = 'mongodb://localhost:27017/hadar';
 
 // Connect to Mongo
 mongoose.connect(databaseURL);
