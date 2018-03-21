@@ -9,9 +9,26 @@
     <script src="vendors/angular.min.js"></script>
     <script src="scripts/client.js"></script>
 </head>
-<body>
-    <h1>Let's Save Some Foods!</h1>
-    
-    
+<body ng-app="FoodApp">
+    <div class="container" ng-controller="FoodController as vm">
+        <h1>Let's Save Some Foods!</h1>
+        <h2>Add food:</h2>
+        New Food: {{vm.newFood}}
+        <div>
+            Food Name: <input type="text" ng-model="vm.newFood.name"/>
+            Deliciousness Rating: <input type="number" ng-model="vm.newFood.deliciousness_rating"/>
+            Food is Hot: <input type="boolean" ng-model="vm.newFood.is_hot" />
+            <button ng-click="vm.addFood(vm.newFood)">Add Food</button>
+        </div>
+        <h2>Our Food!</h2>
+        <div ng-repeat="food in vm.foodArray">
+            Food Name: {{food.name}}
+            <br>
+            Food Rating: {{food.deliciousness_rating}}
+            <br>
+            Is the food hot?: {{food.is_hot}}
+            <br>
+        </div>
+    </div>
 </body>
 </html>
